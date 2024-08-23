@@ -3,9 +3,6 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     color: #fff;
 }
@@ -14,36 +11,21 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    background: linear-gradient(135deg, #00b09b, #96c93d);
     z-index: -1;
-    overflow: hidden;
-}
-
-.background::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 20%, transparent 60%);
-    animation: rotate 10s linear infinite;
-}
-
-@keyframes rotate {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
 }
 
 .login-container, .admin-panel {
     background: rgba(0, 0, 0, 0.8);
-    padding: 20px 30px;
+    padding: 20px;
     border-radius: 12px;
-    text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     width: 300px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 h1 {
@@ -66,7 +48,7 @@ input {
 }
 
 button {
-    background: #6e8efb;
+    background: #00b09b;
     color: #fff;
     font-weight: 600;
     cursor: pointer;
@@ -74,7 +56,7 @@ button {
 }
 
 button:hover {
-    background: #5a79e0;
+    background: #00997c;
 }
 
 .error {
@@ -85,22 +67,44 @@ button:hover {
     margin-bottom: 20px;
 }
 
-.user-actions {
+.admin-panel {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    transform: none;
+}
+
+.left-panel, .right-panel {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.right-panel {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
 }
 
 #users-scores {
     list-style: none;
     padding: 0;
-    text-align: left;
 }
 
 #users-scores li {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     padding: 10px;
     margin-bottom: 5px;
     border-radius: 6px;
+}
+
+.download-btn {
+    margin-top: 20px;
+    background: #ff7e5f;
+}
+
+.download-btn:hover {
+    background: #e0674c;
 }
