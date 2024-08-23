@@ -19,21 +19,27 @@
     </div>
     
     <div class="admin-panel" style="display: none;">
-        <h1>Welcome, Admin</h1>
-        <div class="user-actions">
-            <input type="text" id="new-username" placeholder="New Username">
-            <input type="password" id="new-password" placeholder="New Password">
-            <button onclick="createUser()">Create User</button>
+        <div class="left-panel">
+            <h1>Admin Panel</h1>
+            <div class="user-actions">
+                <input type="text" id="new-username" placeholder="New Username">
+                <button onclick="createUser()">Create User</button>
+            </div>
+            <div class="user-actions">
+                <select id="users-list"></select>
+                <input type="number" id="user-score" placeholder="Score">
+                <button onclick="updateScore()">Update Score</button>
+                <button onclick="deleteUser()">Delete User</button>
+            </div>
+            <button class="download-btn" onclick="downloadScores()">Download Scores</button>
         </div>
-        <div class="user-actions">
-            <select id="users-list"></select>
-            <input type="number" id="user-score" placeholder="Score">
-            <button onclick="updateScore()">Update Score</button>
-            <button onclick="deleteUser()">Delete User</button>
+        
+        <div class="right-panel">
+            <h2>User Scores:</h2>
+            <ul id="users-scores"></ul>
         </div>
-        <h2>User Scores:</h2>
-        <ul id="users-scores"></ul>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
