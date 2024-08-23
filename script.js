@@ -7,7 +7,7 @@ function login() {
 
     if (username === adminUsername && password === adminPassword) {
         document.querySelector('.login-container').style.display = 'none';
-        document.querySelector('.admin-panel').style.display = 'block';
+        document.querySelector('.admin-panel').style.display = 'flex';
         loadUsers();
     } else {
         document.getElementById('login-error').style.display = 'block';
@@ -35,11 +35,10 @@ function loadUsers() {
 
 function createUser() {
     const username = document.getElementById('new-username').value;
-    const password = document.getElementById('new-password').value;
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
 
-    users.push({ username, password, score: 0 });
+    users.push({ username, score: 0 });
     localStorage.setItem('users', JSON.stringify(users));
 
     loadUsers();
@@ -67,4 +66,21 @@ function deleteUser() {
 
     localStorage.setItem('users', JSON.stringify(users));
     loadUsers();
+}
+
+function downloadScores() {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    let data = 'Username\tScore\n';
+
+    users.forEach(user => {
+        data += `${user.username}\t${user.score}\n`;
+    });
+
+    const blob = new Blob([data], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'scores.txt';
+    a.click();
+    URL.revokeObjectURL(url);
 }
