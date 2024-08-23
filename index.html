@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Admin Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="login-error" style="color: red; display: none;">Invalid username or password!</p>
+    </div>
+    
+    <div class="admin-panel" style="display: none;">
+        <h1>Welcome, Admin</h1>
+        <div>
+            <input type="text" id="new-username" placeholder="New Username">
+            <input type="password" id="new-password" placeholder="New Password">
+            <button onclick="createUser()">Create User</button>
+        </div>
+        <div>
+            <select id="users-list"></select>
+            <input type="number" id="user-score" placeholder="Score">
+            <button onclick="updateScore()">Update Score</button>
+            <button onclick="deleteUser()">Delete User</button>
+        </div>
+        <h2>User Scores:</h2>
+        <ul id="users-scores"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
