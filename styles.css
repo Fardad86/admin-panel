@@ -21,7 +21,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: auto;
     position: absolute;
     top: 50%;
@@ -80,13 +80,14 @@ button:hover {
     left: 5%;
     transform: none;
     overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .left-panel, .right-panel {
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
-    max-width: 50%;
+    max-width: calc(50% - 20px);
 }
 
 .left-panel {
@@ -120,4 +121,15 @@ button:hover {
 
 .download-btn:hover {
     background: #e0674c;
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .admin-panel {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        max-width: 100%;
+    }
 }
