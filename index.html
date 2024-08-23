@@ -5,24 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background"></div>
+
     <div class="login-container">
         <h1>Admin Login</h1>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">
         <button onclick="login()">Login</button>
-        <p id="login-error" style="color: red; display: none;">Invalid username or password!</p>
+        <p id="login-error" class="error">Invalid username or password!</p>
     </div>
     
     <div class="admin-panel" style="display: none;">
         <h1>Welcome, Admin</h1>
-        <div>
+        <div class="user-actions">
             <input type="text" id="new-username" placeholder="New Username">
             <input type="password" id="new-password" placeholder="New Password">
             <button onclick="createUser()">Create User</button>
         </div>
-        <div>
+        <div class="user-actions">
             <select id="users-list"></select>
             <input type="number" id="user-score" placeholder="Score">
             <button onclick="updateScore()">Update Score</button>
